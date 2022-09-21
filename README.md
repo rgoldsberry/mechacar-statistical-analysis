@@ -29,3 +29,37 @@ In total, yes, the suspension coils fall below the 100 pounds per square inch va
 
 However, when looking at individual manufacturing lots, it seems like Lot 1 and Lot 2 have much more consistency, with variances of 1 and 7, respectively and most of the variance in the total manufacturing group is coming from Lot 3, which has a variance of 170 PSI. Lot 3 does not meet the design specifications.<br>
 ![Lot_Summary](images/PSI_LotSummary.PNG)
+
+## T-Tests on Suspension Coils
+For all of these tests we'll have the same H<sub>0</sub> and H<sub>a</sub>.<br>
+H<sub>0</sub>: there is no statistical difference between the sample mean and the population mean (assumed to be 1,500)<br>
+H<sub>a</sub>: there is a statistical difference between the sample mean and the population mean (assumed to be 1,500)
+
+### Total Manufactured Group
+![T_Test_Total](images/T_Test_Total.PNG)<br>
+Here we have a p-value of 0.06. Assuming we're working with a confidence level of 0.05, then we will opt to fail to reject H<sub>0</sub> and say that the means between the total group and the population are statistically similar.
+
+### Lot 1
+![T_Test_Lot1](images/T_Test_Lot1.PNG)<br>
+Here we have a p-value of 1. Assuming we're working with a confidence level of 0.05, then we will opt to fail to reject H<sub>0</sub> and say that the means between the total group and the population are statistically similar.
+
+### Lot 2
+![T_Test_Lot2](images/T_Test_Lot2.PNG)<br>
+Here we have a p-value of 0.6072. Assuming we're working with a confidence level of 0.05, then we will opt to fail to reject H<sub>0</sub> and say that the means between the total group and the population are statistically similar.
+
+### Lot 3
+![T_Test_Lot3](images/T_Test_Lot3.PNG)<br>
+Here we have a p-value of 0.04. Assuming we're working with a confidence level of 0.05, then we will opt to reject H<sub>0</sub> and say that the means between the total group and the population are not statistically similar. This is in line with our intuition already, when we looked at the summary statistics for suspension coils, Lot 3 stood out there as well.
+
+## Study Design: MechaCar vs Competition
+
+### Write a short description of a statistical study that can quantify how the MechaCar performs against the competition.
+Two options come to mind, the first being an upfront cost study: comparing the cost of the car with its combined fuel efficiency and safety rating. Looking to see if MechaCar is able to give more per dollar than its competitors. The second option is a long-term cost study: comparing the maintenance costs with miles driven or years owned. Seeing if MechaCar can last longer or has lower maintenance costs than its competitors. For the questions below I'll focus on the upfront cost question: does MechaCar offer the highest combined fuel efficiency for the lowest cost.
+
+- What metric or metrics are you going to test?<br>
+
+- What is the null hypothesis or alternative hypothesis?<br>
+
+- What statistical test would you use to test the hypothesis? And why?<br>
+
+- What data is needed to run the statistical test?<br>

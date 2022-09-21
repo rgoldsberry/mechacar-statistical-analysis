@@ -21,3 +21,18 @@ lot_summary <- suspension_data %>%
 
 # DELIVERABLE 3 - T-Tests on Suspension Coils
 t.test(suspension_data$PSI, mu=1500)
+
+suspension_data %>% 
+  filter(Manufacturing_Lot == "Lot1") %>% 
+  select(PSI) %>% 
+  t.test(mu=1500)
+
+suspension_data %>% 
+  filter(Manufacturing_Lot == "Lot2") %>% 
+  select(PSI) %>% 
+  t.test(mu=1500)
+
+suspension_data %>% 
+  filter(Manufacturing_Lot == "Lot3") %>% 
+  select(PSI) %>% 
+  t.test(mu=1500)
