@@ -5,8 +5,8 @@ Data Analysis Bootcamp - Week 15
 The purpose of this repository is to calculate statistics for AutosRUs and their new prototype, the MechaCar. We'll use the R script [MechaCarChallenge](MechaCarChallenge.R) to calculate these statistics and then put analyses of the results in to this readme file.
 
 ## Resources
-[MPG Data](data/MechaCar_mpg.csv)<br>
-[Suspension Coil Data](data/Suspension_Coil.csv)
+- [MPG Data](data/MechaCar_mpg.csv)
+- [Suspension Coil Data](data/Suspension_Coil.csv)
 
 ## Linear Regression to Predict MPG
 
@@ -49,17 +49,28 @@ Here we have a p-value of 0.6072. Assuming we're working with a confidence level
 
 ### Lot 3
 ![T_Test_Lot3](images/T_Test_Lot3.PNG)<br>
-Here we have a p-value of 0.04. Assuming we're working with a confidence level of 0.05, then we will opt to reject H<sub>0</sub> and say that the means between the total group and the population are not statistically similar. This is in line with our intuition already, when we looked at the summary statistics for suspension coils, Lot 3 stood out there as well.
+Here we have a p-value of 0.04. Assuming we're working with a confidence level of 0.05, then we will opt to reject H<sub>0</sub> and say that the means between the total group and the population are not statistically similar. This is in line with our intuition already, when we looked at the summary statistics for suspension coils Lot 3 stood out there as well.
 
 ## Study Design: MechaCar vs Competition
 
 ### Write a short description of a statistical study that can quantify how the MechaCar performs against the competition.
-Two options come to mind, the first being an upfront cost study: comparing the cost of the car with its combined fuel efficiency and safety rating. Looking to see if MechaCar is able to give more per dollar than its competitors. The second option is a long-term cost study: comparing the maintenance costs with miles driven or years owned. Seeing if MechaCar can last longer or has lower maintenance costs than its competitors. For the questions below I'll focus on the upfront cost question: does MechaCar offer the highest combined fuel efficiency for the lowest cost.
+A test that could be done is seeing if there is a difference in the combined fuel efficiency between MechaCar and its competitors in each vehicle class it produces.
 
-- What metric or metrics are you going to test?<br>
+- What metric or metrics are you going to test?
 
-- What is the null hypothesis or alternative hypothesis?<br>
+City and highway fuel efficiency, grouped together into a combined fuel efficiency. From the [EPA]("https://www.epa.gov/fueleconomy/text-version-gasoline-label): "Combined fuel economy is a weighted average of City and Highway MPG values that is calculated by weighting the City value by 55% and the Highway value by 45%."
 
-- What statistical test would you use to test the hypothesis? And why?<br>
+We can use that weighting to calculate the combined fuel efficiency for each vehicle. This is helpful since it narrows down the two mpgs to one number to compare and becuase most people do a mix of highway and city driving, so using either of those illustrates an extreme that may not be representative of normal driving.
 
-- What data is needed to run the statistical test?<br>
+- What is the null hypothesis or alternative hypothesis?
+
+H<sub>0</sub>: there is no statistical difference between the two sample means<br>
+H<sub>a</sub>: there is a statistical difference between the two sample means
+
+- What statistical test would you use to test the hypothesis? And why?
+
+As described, a two-sample T-Test would be used. This would be looking at MechaCar vs one competitor at a time.
+
+- What data is needed to run the statistical test?
+
+City and Highway fuel efficiency, from which we'll calculate a combined Fuel Efficienct. Additionally, we'll need the class of the vehicle as a categorical variable, to compare sedans to sedans, hybrids to hybrids, trucks to trucks, etc... We'll run the test for each category in a way similar to when we ran one-sample t-tests for each production lot earlier in this challenge.
