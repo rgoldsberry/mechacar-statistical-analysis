@@ -1,3 +1,8 @@
+# config files
+config.py
+config.js
+config.r
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
